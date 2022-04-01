@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/studio
+
 # testing
 /coverage
 
