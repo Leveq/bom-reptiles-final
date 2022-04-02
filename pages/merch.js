@@ -2,7 +2,11 @@ import React from 'react'
 
 export const merch = () => {
   return (
-    <div>merch</div>
+    <div>
+      <h1>
+        Merch
+      </h1>
+    </div>
   )
 }
 

@@ -2,7 +2,11 @@ import React from 'react'
 
 function Feeders() {
   return (
-    <div>Feeders</div>
+    <div>
+      <h1>
+        Feeders
+      </h1>
+    </div>
   )
 }
 

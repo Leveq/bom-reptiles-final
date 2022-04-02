@@ -1,14 +1,15 @@
 import Head from 'next/head'
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import Nav from '../components/Nav'
+import Overview from '../components/Overview'
+import HeroImg from '../components/HeroImg'
 
 
 export default function Home() {
   return (
     <>
-      
+      <div className='container h-screen'>
+        <HeroImg />
+      </div>
+      <Overview />
     </>
   )
 }
