@@ -5,6 +5,7 @@ function HeroImg() {
   return (
     <>
       <Image
+        className='brightness-50'
         src={hero}
         alt="Hero image"
         layout='fill'
