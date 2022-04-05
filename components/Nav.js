@@ -4,6 +4,7 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import navStyles from '../styles/Navbar.module.css'
 import { motion } from "framer-motion";
 
+
   const Nav = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -11,27 +12,27 @@ import { motion } from "framer-motion";
     <>
       <nav className={navStyles.app__navbar}>
         <div className={navStyles.app__navbar_logo}>
-          <h1 className="font-stencil text-2xl text-white">
+          <h1 className="font-shizuru text-2xl text-white">
             <span className="text-emerald-400">B.O.M</span> Reptiles
           </h1>
         </div>
           <ul className={navStyles.app__navbar_links}>
-            <Link className='' href='/'>
+            <Link href='/'>
               Home
             </Link>
-            <Link href='feeders'>
+            <Link href='/feeders'>
               Feeders
             </Link>
-            <Link href='supplies'>
+            <Link href='/supplies'>
               Supplies
             </Link>
-            <Link href='merch'>
+            <Link href='/merch'>
               Merch
             </Link>
-            <Link href='services'>
+            <Link href='/services'>
               Services
             </Link>
-            <Link href='education'>
+            <Link href='/education'>
               Education
             </Link>
           </ul>

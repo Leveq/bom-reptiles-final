@@ -7,8 +7,8 @@
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    /* border: 1px solid rgba(255, 255, 255, 0.25); */
+    box-shadow: 0 25px 50px -10px rgb(0 0 0 / 0.40);
     position: fixed;
     z-index: 2;
 }
@@ -94,7 +94,8 @@
     align-items: flex-end;
     flex-direction: column;
     /* background: url(../public/watercolorleaf.png); */
-    background-color: #333;
+    background: rgb(52,211,153);
+background: linear-gradient(0deg, rgba(52,211,153,1) 0%, rgba(51,51,51,1) 39%, rgba(51,51,51,1) 100%);  
     background-size: cover;
     background-repeat: repeat;
     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
@@ -122,7 +123,7 @@
     margin: 1rem;
 }
 .app__navbar_menu div ul li a {
-    color: var(--gray-color);
+    color: #fff;
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;

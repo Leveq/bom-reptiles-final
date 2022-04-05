@@ -19,7 +19,8 @@ module.exports = {
     fontFamily: {
       sans: ["Graphik", ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
-      stencil: ['"Saira Stencil One", cursive']
+      stencil: ['"Saira Stencil One", cursive'],
+      shizuru: ['"Shizuru", cursive']
     },
     extend: {
       colors: {

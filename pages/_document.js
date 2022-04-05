@@ -9,6 +9,9 @@ export default class CustomDocument extends Document {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
                 <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap"
                 rel="stylesheet" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />
