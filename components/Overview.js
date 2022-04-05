@@ -20,18 +20,19 @@ const features = [
 
 export default function Overview() {
   return (
-    <div className="py-12 bg-slate">
-      <motion.div 
+    <div className="flex justify-center items-center py-12 bg-slate h-screen">
+      <div>
+        <motion.div 
       whileInView={{ opacity: [0, 1] }}
       transition={{ duration: 0.9 }}
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
         className="lg:text-center">
           <h2 className="text-center text-emerald-400 font-semibold tracking-wide uppercase">About us</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-extrabold text-center tracking-tight text-white sm:text-4xl">
             Just say <span className='text-red-500'>NO</span> to impulsive purchases!
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-white lg:mx-auto">
+          <p className="mt-4 text-xl text-center text-white lg:mx-auto">
             Always have a proper enclosure established BEFORE you bring your pet home.
           </p>
         </div>
@@ -48,6 +49,8 @@ export default function Overview() {
           </dl>
         </div>
       </motion.div>
+      </div>
+      
     </div>
   )
 }

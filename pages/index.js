@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Overview from '../components/Overview'
-import HeroImg from '../components/HeroImg'
+import Cases from '../components/Cases'
 import { motion } from 'framer-motion'
 
 
@@ -19,7 +19,9 @@ export default function Home() {
           Serving South Texas
           </p>
           <a className='rounded-full
-          bg-emerald-400
+          bg-emerald-500
+          shadow-lg
+          shadow-emerald-400/50
           p-2
           text-white
           shadow-xl
@@ -27,6 +29,7 @@ export default function Home() {
         </motion.div>
       </header>
       <Overview />
+      <Cases />
     </>
   )
 }
