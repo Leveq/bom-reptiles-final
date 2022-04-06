@@ -33,7 +33,8 @@ function Cases() {
             text-center
             tracking-tight
             text-white
-            sm:text-4xl'>
+            sm:text-4xl
+            2xl:text-6xl'>
             Custom Enclosures
             </motion.h1>
             <motion.p whileInView={{ opacity: [0, 1] }}
@@ -42,8 +43,10 @@ function Cases() {
             text-center
             text-white
             lg:mx-auto
-            leading-loose'>
-            Hand crafted environments suitable for your pets needs and comfort
+            leading-loose
+            py-5
+            2xl:text-2xl'>
+            Hand crafted environments suitable for your pets comfort and needs
             </motion.p>
         </div>
         <div 

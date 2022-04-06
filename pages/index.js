@@ -11,8 +11,8 @@ export default function Home() {
         <motion.div className='flex h-full text-center flex-col items-center justify-center'
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}>
-          <h1 className='text-5xl text-white font-stencil'>Bottom of the Map Reptiles</h1>
-          <p className='text-xl text-white p-5 leading-loose'> 
+          <h1 className='text-5xl text-white font-stencil 2xl:text-7xl'>Bottom of the Map Reptiles</h1>
+          <p className='text-xl text-white p-5 leading-loose 2xl:text-2xl 2xl:leading-10'> 
           We make custom enclosures, 
           provide quality feeders, 
           pet education and services <br />

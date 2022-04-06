@@ -35,6 +35,12 @@
     transition: all 0.3s ease-in-out;
 }
 
+@media (min-width: 1536px) {
+    .app__navbar_links a {
+        font-size: 24px;
+    }
+}
+
 .app__navbar_links a:hover {
     color: #34d399;
 }

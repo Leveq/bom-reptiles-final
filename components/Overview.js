@@ -28,11 +28,25 @@ export default function Overview() {
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
         className="lg:text-center">
-          <h2 className="text-center text-emerald-400 font-semibold tracking-wide uppercase">About us</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold text-center tracking-tight text-white sm:text-4xl">
+          <h2 className="text-center
+          text-emerald-400
+          font-semibold
+          tracking-wide
+          uppercase">
+          About us
+          </h2>
+          <p className="mt-2
+          text-3xl
+          leading-8
+          font-extrabold
+          text-center
+          tracking-tight
+          text-white
+          sm:text-4xl
+          2xl:text-6xl">
             Just say <span className='text-red-500'>NO</span> to impulsive purchases!
           </p>
-          <p className="mt-4 text-xl text-center text-white lg:mx-auto">
+          <p className="mt-4 text-xl text-center text-white lg:mx-auto 2xl:text-2xl">
             Always have a proper enclosure established BEFORE you bring your pet home.
           </p>
         </div>
@@ -41,9 +55,23 @@ export default function Overview() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <p className="text-lg text-center leading-6 pt-5 font-medium text-emerald-400">{feature.name}</p>
+                  <p className="text-lg
+                  text-center
+                  leading-6
+                  pt-5
+                  font-medium
+                  text-emerald-400
+                  2xl:text-2xl">
+                  {feature.name}
+                  </p>
                 </dt>
-                <dd className="mt-2 text-center leading-relaxed text-white">{feature.description}</dd>
+                <dd className="mt-2
+                text-center
+                leading-relaxed
+                text-white
+                2xl:text-xl">
+                {feature.description}
+                </dd>
               </div>
             ))}
           </dl>

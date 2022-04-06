@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
     <>
       <nav className={navStyles.app__navbar}>
         <div className={navStyles.app__navbar_logo}>
-          <h1 className="font-shizuru text-2xl text-white">
+          <h1 className="font-shizuru text-2xl text-white 2xl:text-5xl">
             <span className="text-emerald-400">B.O.M</span> Reptiles
           </h1>
         </div>
