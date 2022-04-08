@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Overview from '../components/Overview'
 import Cases from '../components/Cases'
 import ContactUs from '../components/Contact'
+import Team from '../components/Team'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -55,6 +56,7 @@ export default function Home({image}) {
       </div>
       <Overview />
       <Cases />
+      <Team />
       <ContactUs />
     </>
   )

@@ -187,6 +187,7 @@ export default function ContactUs() {
             allowFullScreen>
           </iframe>
           <motion.p className="
+          pl-2
           text-start
           text-white
           font-normal">
