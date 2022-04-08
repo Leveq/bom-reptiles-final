@@ -3,6 +3,7 @@ import Overview from '../components/Overview'
 import Cases from '../components/Cases'
 import ContactUs from '../components/Contact'
 import Team from '../components/Team'
+import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -58,6 +59,7 @@ export default function Home({image}) {
       <Cases />
       <Team />
       <ContactUs />
+      <Footer />
     </>
   )
 }
