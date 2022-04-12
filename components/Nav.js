@@ -8,6 +8,21 @@ import { motion } from "framer-motion";
   const Nav = () => {
   const [toggle, setToggle] = useState(false);
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+  
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 }
+  }
+
   return (
     <>
       <nav className={navStyles.app__navbar}>
@@ -41,30 +56,34 @@ import { motion } from "framer-motion";
             {
               toggle && (
                 <motion.div
-                  whileInView={{ x: [300, 0]}}
-                  transition={{ duration: 0.85, ease: 'easeOut' }}
-                >
+                initial={{ width: 0 }} 
+                animate={{ width: 300 }}>
                   <HiX onClick={() => setToggle(false)}/>
-                  <ul onClick={() => setToggle(false)} className={navStyles.app__navbar_links}>
-                    <Link href='/'>
-                      Home
+                  <motion.ul
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                    onClick={() => setToggle(false)}
+                    className={navStyles.app__navbar_links}>
+                    <Link passHref href='/'>
+                      <motion.a variants={item} >Home</motion.a>
                     </Link>
-                    <Link href='feeders'>
-                      Feeders
+                    <Link passHref href='feeders'>
+                    <motion.a  variants={item} >Feeders</motion.a>
                     </Link>
-                    <Link href='supplies'>
-                      Supplies
+                    <Link passHref href='supplies'>
+                    <motion.a variants={item} >Supplies</motion.a>
                     </Link>
-                    <Link href='merch'>
-                      Merch
+                    <Link passHref href='merch'>
+                    <motion.a variants={item} >Merch</motion.a>
                     </Link>
-                    <Link href='services'>
-                      Services
+                    <Link passHref href='services'>
+                    <motion.a variants={item} >Services</motion.a>
                     </Link>
-                    <Link href='education'>
-                      Education
+                    <Link passHref href='education'>
+                    <motion.a variants={item} >Education</motion.a>
                     </Link>
-                  </ul>
+                  </motion.ul>
                 </motion.div>
             )}
             

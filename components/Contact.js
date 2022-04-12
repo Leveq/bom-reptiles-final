@@ -297,7 +297,7 @@ export default function ContactUs() {
             width="100%"
             height="300"
             frameBorder="0"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCO-jyW66C7l6GKQn6PDUC4_MQlfhsbumQ&q=Bom+Reptiles,Angleton+Texas"
             allowFullScreen>
           </iframe>

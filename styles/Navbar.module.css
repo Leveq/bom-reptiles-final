@@ -100,8 +100,7 @@
     align-items: flex-end;
     flex-direction: column;
     /* background: url(../public/watercolorleaf.png); */
-    background: rgb(52,211,153);
-background: linear-gradient(0deg, rgba(52,211,153,1) 0%, rgba(51,51,51,1) 39%, rgba(51,51,51,1) 100%);  
+    background: rgb(52,211,153);background: linear-gradient(0deg, rgba(52,211,153,1) 0%, rgba(51,51,51,1) 39%, rgba(51,51,51,1) 100%);  
     background-size: cover;
     background-repeat: repeat;
     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
