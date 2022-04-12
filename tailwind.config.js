@@ -19,14 +19,16 @@ module.exports = {
     fontFamily: {
       sans: ["Graphik", ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
-      stencil: "Saira Stencil One",
-      shizuru: "Shizuru"
     },
     extend: {
       colors: {
         gray: colors.blueGray,
         indigo: colors.indigo,
         truegray: colors.gray,
+      },
+      fontFamily: {
+        stencil: "Saira Stencil One",
+      shizuru: "Shizuru"
       },
       boxShadow: {
         'material': 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;'
