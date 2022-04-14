@@ -22,6 +22,9 @@ export const getServerSideProps = async () => {
 export default function Home({image}) {
   return (
     <>
+      <Head>
+        <title>Welcome to B.O.M Reptiles</title>
+      </Head>
       <div className='z-10'>
       <header className='relative h-screen after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-emerald-400 after:opacity-30 after:brightness-0'>
         <Image
