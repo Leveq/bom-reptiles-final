@@ -57,7 +57,7 @@ import { motion } from "framer-motion";
               toggle && (
                 <motion.div
                 initial={{ width: 0 }} 
-                animate={{ width: 300 }}>
+                animate={{ width: 350 }}>
                   <HiX onClick={() => setToggle(false)}/>
                   <motion.ul
                     variants={container}

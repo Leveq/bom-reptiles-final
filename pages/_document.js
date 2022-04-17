@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 export default class CustomDocument extends Document {
     render() {
         return (
-            <Html>
+            <Html className="scroll-smooth">
                 <Head>
                 <meta name="description" content="Welcome to B.O.M Reptiles, we provide custom elcosures and quality feeders. Contact us if you have any questions!" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />

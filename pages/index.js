@@ -1,7 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Overview from '../components/Overview'
 import Cases from '../components/Cases'
 import ContactUs from '../components/Contact'
+import Preview from '../components/Preview'
 import Team from '../components/Team'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
@@ -25,8 +27,18 @@ export default function Home({image}) {
       <Head>
         <title>Welcome to B.O.M Reptiles</title>
       </Head>
-      <div className='z-10'>
-      <header className='relative h-screen after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-emerald-400 after:opacity-30 after:brightness-0'>
+      <div>
+      <header className='
+      relative
+      h-screen
+      after:absolute
+      after:inset-0
+      after:bg-gradient-to-b
+      after:from-transparent
+      after:to-emerald-400
+      after:opacity-30
+      after:brightness-0
+      z-0'>
         <Image
         className='brightness-50'
         alt='Unsplash image'
@@ -36,16 +48,26 @@ export default function Home({image}) {
         priority={true}
         loading='eager'
          />
-        <motion.div className='inset-0 absolute flex h-full text-center flex-col items-center justify-center'
+        <motion.div className='inset-0
+        absolute flex h-full
+        text-center
+        flex-col
+        items-center
+        justify-center'
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}>
-          <h1 className='z-100 text-5xl text-white font-stencil 2xl:text-7xl'>Bottom of the Map Reptiles</h1>
+          <h1 className='
+          z-100 text-5xl
+          text-white
+          font-stencil
+          2xl:text-7xl'>Bottom of the Map Reptiles</h1>
           <p className='text-xl text-white p-5 leading-loose 2xl:text-2xl 2xl:leading-10'> 
           We make custom enclosures, 
           provide quality feeders, 
           pet education and services <br />
           Serving South Texas
           </p>
+          <Link href="/#About">
           <a className='rounded-full
           bg-emerald-500
           shadow-lg
@@ -54,12 +76,16 @@ export default function Home({image}) {
           text-white
           shadow-xl
           font-semibold
-          animate-bounce'>Read More</a>
+          animate-bounce
+          cursor-pointer
+          z-10'>Read More</a>
+          </Link>
         </motion.div>
       </header>
       </div>
       <Overview />
       <Cases />
+      {/* <Preview /> */}
       <Team />
       <ContactUs />
       <Footer />
