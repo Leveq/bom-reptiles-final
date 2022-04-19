@@ -20,7 +20,11 @@ const features = [
 
 export default function Overview() {
   return (
-    <div id="About" className="flex justify-center items-center bg-slate w-full h-screen">
+    <div id="About" className="flex
+    justify-center
+    items-center
+    bg-slate
+    w-full h-screen">
       <div>
         <motion.div 
       whileInView={{ opacity: [0, 1] }}

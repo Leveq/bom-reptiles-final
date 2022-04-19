@@ -161,7 +161,9 @@ export default function ContactUs() {
             focus:bg-white
             focus:border-gray-500"
           />
-         
+          {errors?.fullname && (
+            <p className="text-red-500">Fullname cannot be empty.</p>
+          )}
 
           <label
             htmlFor="email"
@@ -199,7 +201,9 @@ export default function ContactUs() {
             focus:bg-white
             focus:border-gray-500"
           />
-          
+          {errors?.email && (
+            <p className="text-red-500">Email cannot be empty.</p>
+          )}
 
           <label
             htmlFor="subject"
@@ -237,7 +241,10 @@ export default function ContactUs() {
             focus:bg-white
             focus:border-gray-500"
           />
-         
+         {errors?.subject && (
+            <p className="text-red-500">Subject cannot be empty.</p>
+          )}
+
           <label
             htmlFor="message"
             className="
@@ -277,6 +284,9 @@ export default function ContactUs() {
             h-48
             resize-none"
           ></textarea>
+          {errors?.message && (
+            <p className="text-red-500">Message body cannot be empty.</p>
+          )}
           
           <div className="
           flex
@@ -298,9 +308,19 @@ export default function ContactUs() {
               text-center
               shadow-xl
               animate-pulse">
-            Submit
+            Send
             </button>
           </div>
+          {showSuccessMessage && (
+              <p className="text-emerald-500 font-bold my-2">
+                Thanks!! Your Message has been sent 😎
+              </p>
+            )}
+            {showFailureMessage && (
+              <p className="text-red-500">
+                Oops! Something went wrong, please try again.
+              </p>
+            )}
         </form>
     </motion.div>
     <motion.div className="container lg:w-1/2 mx-0 md:items-center">
