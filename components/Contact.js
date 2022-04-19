@@ -308,12 +308,12 @@ export default function ContactUs() {
               text-center
               shadow-xl
               animate-pulse">
-            Send
+            {buttonText}
             </button>
           </div>
           {showSuccessMessage && (
-              <p className="text-emerald-500 font-bold my-2">
-                Thanks!! Your Message has been sent 😎
+              <p className="text-teal-400 font-bold my-2">
+                Thanks!! Your message has been sent 😎
               </p>
             )}
             {showFailureMessage && (
