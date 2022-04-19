@@ -90,7 +90,7 @@ const Team = () => {
        <motion.p 
       whileInView={{ opacity: [0, 1] }}
       transition={{ duration: 0.9 }}>
-       <span className="text-emerald-400">Salina Nichols</span>. <br />
+       <span className="text-emerald-400">Salina Nichols</span> <br />
        &quot;Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
        Maiores impedit perferendis suscipit eaque, <br />
        iste dolor cupiditate blanditiis ratione.&quot;
