@@ -26,6 +26,7 @@ function Cases() {
         h-1/5
         my-4'>
             <motion.h1 
+            initial='hidden'
             whileInView={{ x: [-100, 0], opacity: [0, 1] }}
             transition={{ duration: 1 }} className='text-3xl
             leading-loose
@@ -62,6 +63,7 @@ function Cases() {
         text-white
         mx-2'>
             <motion.div 
+            initial='hidden'
             variant={scaleVariants}
             whileInView={scaleVariants.whileInView}>
             <Image 

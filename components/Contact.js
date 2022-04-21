@@ -92,6 +92,7 @@ export default function ContactUs() {
     }
     console.log(fullname, email, subject, message);
   };
+
   return (
     <div className="
     flex
@@ -162,7 +163,7 @@ export default function ContactUs() {
             focus:border-gray-500"
           />
           {errors?.fullname && (
-            <p className="text-red-500">Fullname cannot be empty.</p>
+            <p className="text-red-500">Full name cannot be empty.</p>
           )}
 
           <label
@@ -306,13 +307,12 @@ export default function ContactUs() {
               text-lg
               font-bold
               text-center
-              shadow-xl
-              animate-pulse">
+              shadow-xl">
             {buttonText}
             </button>
           </div>
           {showSuccessMessage && (
-              <p className="text-teal-400 font-bold my-2">
+              <p className="animate-pulse text-emerald-400 font-bold my-2">
                 Thanks!! Your message has been sent 😎
               </p>
             )}

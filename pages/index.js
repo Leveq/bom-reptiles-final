@@ -54,6 +54,7 @@ export default function Home({image}) {
         flex-col
         items-center
         justify-center'
+        initial='hidden'
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}>
           <h1 className='
