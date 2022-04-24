@@ -50,8 +50,18 @@ function Cases() {
             2xl:text-6xl'>
             Custom Enclosures
             </motion.h1>
-            <motion.p whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 1.3 }}
+            <motion.p
+            initial='hidden'
+            whileInView='visible'
+            transition={{duration: 0.7}}
+            variants={{
+              hidden: {
+                opacity: 0
+              },
+              visible: {
+                opacity: 1
+              }
+            }}
             className='text-lg
             text-center
             text-white
