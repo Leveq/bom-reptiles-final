@@ -4,7 +4,21 @@ import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className="text-center lg:text-left text-gray-100">
+    <motion.footer className="
+    text-center
+    lg:text-left
+    text-gray-100"
+    initial='hidden'
+      whileInView='visible'
+      transition={{duration: 0.5}}
+      variants={{
+        hidden: {
+          opacity: 0
+        },
+        visible: {
+          opacity: 1
+        }
+      }}>
   <div className="
   flex
   justify-center
@@ -127,7 +141,7 @@ const Footer = () => {
     <span>© 2021 Copyright:</span> &nbsp;
     <a className="text-gray-100 font-semibold" href="#">B.O.M Reptiles</a>
   </div>
-</footer>
+</motion.footer>
   )
 }
 

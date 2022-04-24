@@ -27,8 +27,20 @@ function Cases() {
         my-4'>
             <motion.h1 
             initial='hidden'
-            whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-            transition={{ duration: 1 }} className='text-3xl
+            whileInView='visible'
+            transition={{duration: 0.5}}
+            variants={{
+              hidden: {
+                x: -100,
+                opacity: 0
+              },
+              visible: {
+                x: 0,
+                opacity: 1
+              }
+            }}
+            className='
+            text-3xl
             leading-loose
             font-extrabold
             text-center
@@ -64,13 +76,24 @@ function Cases() {
         mx-2'>
             <motion.div 
             initial='hidden'
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg
-            shadow-lg
-            shadow-cyan-500/50'
+            shadow-lg'
             src="/case6.png"
             layout='responsive' 
             width={480}
@@ -79,8 +102,21 @@ function Cases() {
             </motion.div>
             
             <motion.div 
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            initial='hidden'
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg
@@ -92,9 +128,22 @@ function Cases() {
             alt='Pet case'/>  
             </motion.div>
 
-            <motion.div 
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            <motion.div
+            initial='hidden'
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg'
@@ -106,8 +155,21 @@ function Cases() {
             </motion.div>
 
             <motion.div 
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            initial='hidden'
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg'
@@ -119,8 +181,21 @@ function Cases() {
             </motion.div>
 
             <motion.div 
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            initial='hidden'
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg'
@@ -132,8 +207,21 @@ function Cases() {
             </motion.div>
 
             <motion.div 
-            variant={scaleVariants}
-            whileInView={scaleVariants.whileInView}>
+            initial='hidden'
+            whileInView='visible'
+            variants={{
+              hidden: {
+                scale: .3,
+                opacity: 0
+              },
+               visible: {
+                 scale: 1,
+                 opacity: 1,
+                 transition: {
+                   duration: .5
+                 }
+               }
+             }}>
             <Image 
             className='object-cover
             rounded-lg'

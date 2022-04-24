@@ -108,7 +108,18 @@ export default function ContactUs() {
     w-full
     lg:w-1/2
     mx-0
-    basis-5/12">
+    basis-5/12"
+    initial='hidden'
+      whileInView='visible'
+      transition={{duration: .8}}
+      variants={{
+        hidden: {
+          opacity: 0
+        },
+        visible: {
+          opacity: 1
+        }
+      }}>
       <form
           onSubmit={handleSubmit}
           className="
@@ -336,7 +347,18 @@ export default function ContactUs() {
           pl-2
           text-start
           text-white
-          font-normal">
+          font-normal"
+          initial='hidden'
+          whileInView='visible'
+          transition={{duration: 0.5}}
+          variants={{
+          hidden: {
+            opacity: 0
+          },
+          visible: {
+            opacity: 1
+          }
+        }}>
           Bottom of the Map Reptiles <br />
           610 E Orange St &nbsp; Angleton, TX 77515 <br/>
           <br />

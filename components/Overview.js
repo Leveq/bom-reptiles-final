@@ -20,16 +20,30 @@ const features = [
 
 export default function Overview() {
   return (
-    <div id="About" className="flex
+    <div id="About" className="
+    flex
+    max-w-7xl
+    mx-auto
+    px-4
+    sm:px-6
+    lg:px-8
     justify-center
     items-center
     bg-slate
     w-full h-screen">
       <div>
-        <motion.div 
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.9 }}
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+      initial='hidden'
+      whileInView='visible'
+      transition={{duration: 0.5}}
+      variants={{
+        hidden: {
+          opacity: 0
+        },
+        visible: {
+          opacity: 1
+        }
+      }}>
         <div
         className="lg:text-center">
           <h2 className="text-center

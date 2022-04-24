@@ -55,8 +55,20 @@ export default function Home({image}) {
         items-center
         justify-center'
         initial='hidden'
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 1 }}>
+        whileInView='visible'
+         variants={{
+           hidden: {
+             scale: .8,
+             opacity: 0
+           },
+           visible: {
+             scale: 1,
+             opacity: 1,
+             transition: {
+               duration: .4
+             }
+           }
+         }}>
           <h1 className='
           z-100 text-5xl
           text-white

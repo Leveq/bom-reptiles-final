@@ -1,18 +1,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: 'easeInOut'
-    }
-  }
-}
-
 const Team = () => {
   return (
   <motion.div className="
@@ -26,8 +14,17 @@ const Team = () => {
     mx-auto
     mt-40">
       <motion.h2 
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.9 }} 
+        initial='hidden'
+        whileInView='visible'
+        transition={{duration: 0.5}}
+        variants={{
+          hidden: {
+            opacity: 0
+          },
+          visible: {
+            opacity: 1
+          }
+        }} 
           className="
           text-center
           text-emerald-400
@@ -37,8 +34,19 @@ const Team = () => {
           Contact us
           </motion.h2>
           <motion.p 
-          whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-          transition={{ duration: 1 }} className="mt-2
+          initial='hidden'
+          whileInView='visible'
+          transition={{duration: 0.5}}
+          variants={{
+            hidden: {
+              x: -100,
+              opacity: 0
+            },
+            visible: {
+              x: 0,
+              opacity: 1
+            }
+          }} className="mt-2
           text-3xl
           leading-8
           font-extrabold
@@ -59,14 +67,36 @@ const Team = () => {
       text-white
       2xl:text-xl">
       <motion.div 
-      variant={scaleVariants}
-      whileInView={scaleVariants.whileInView}>
+      initial='hidden'
+      whileInView='visible'
+      variants={{
+        hidden: {
+          scale: .3,
+          opacity: 0
+        },
+         visible: {
+           scale: 1,
+           opacity: 1,
+           transition: {
+             duration: .5
+           }
+         }
+       }}>
         <Image className="rounded-full"
       alt="AJ Stewart" layout="intrinsic" width={110} height={110} src='/aj.png'/> <br />
       </motion.div>
       <motion.p 
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.9 }}>
+      initial='hidden'
+      whileInView='visible'
+      transition={{duration: 0.5}}
+      variants={{
+        hidden: {
+          opacity: 0
+        },
+        visible: {
+          opacity: 1
+        }
+      }}>
        <span className="text-emerald-400">A.J Stewart</span> <br />
        &quot;Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
        Maiores impedit perferendis suscipit eaque, <br />
@@ -82,14 +112,36 @@ const Team = () => {
       text-white
       2xl:text-xl">
       <motion.div 
-      variant={scaleVariants}
-      whileInView={scaleVariants.whileInView}>
+      initial='hidden'
+      whileInView='visible'
+      variants={{
+        hidden: {
+          scale: .3,
+          opacity: 0
+        },
+         visible: {
+           scale: 1,
+           opacity: 1,
+           transition: {
+             duration: .5
+           }
+         }
+       }}>
         <Image className="rounded-full"
       alt="AJ Stewart" layout="intrinsic" width={110} height={110} src='/salina.jpg'/> <br />
       </motion.div>
        <motion.p 
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.9 }}>
+      initial='hidden'
+      whileInView='visible'
+      transition={{duration: 0.5}}
+      variants={{
+        hidden: {
+          opacity: 0
+        },
+        visible: {
+          opacity: 1
+        }
+      }}>
        <span className="text-emerald-400">Salina Nichols</span> <br />
        &quot;Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
        Maiores impedit perferendis suscipit eaque, <br />
