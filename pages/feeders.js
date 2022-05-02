@@ -1,12 +1,16 @@
-import React from 'react'
+import { motion } from "framer-motion"
 
 function Feeders() {
   return (
-    <div>
-      <h1>
-        Feeders
-      </h1>
-    </div>
+    <>
+      <motion.div
+      className="
+      relative
+      h-screen
+      pt-20">
+
+      </motion.div>
+    </>
   )
 }
 

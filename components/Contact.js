@@ -148,7 +148,7 @@ export default function ContactUs() {
             font-bold
             mb-2"
           >
-            Full name <span className="text-red-500">*</span>
+            NAME <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -174,7 +174,11 @@ export default function ContactUs() {
             focus:border-gray-500"
           />
           {errors?.fullname && (
-            <p className="text-red-500">Full name cannot be empty.</p>
+            <motion.p
+            animate={{ x: [33, 0, 10] }}
+            transition={{duration: .3}}
+            className="
+            text-red-500 p-1">Name cannot be empty.</motion.p>
           )}
 
           <label
@@ -214,7 +218,11 @@ export default function ContactUs() {
             focus:border-gray-500"
           />
           {errors?.email && (
-            <p className="text-red-500">Email cannot be empty.</p>
+            <motion.p
+            animate={{ x: [33, 0, 10] }}
+            transition={{duration: .3}}
+            className="
+            text-red-500 p-1">Email cannot be empty.</motion.p>
           )}
 
           <label
@@ -254,7 +262,12 @@ export default function ContactUs() {
             focus:border-gray-500"
           />
          {errors?.subject && (
-            <p className="text-red-500">Subject cannot be empty.</p>
+            <motion.p
+            animate={{ x: [33, 0, 10] }}
+            transition={{duration: .3}}
+            className="
+            text-red-500
+            p-1">Subject cannot be empty.</motion.p>
           )}
 
           <label
@@ -297,7 +310,12 @@ export default function ContactUs() {
             resize-none"
           ></textarea>
           {errors?.message && (
-            <p className="text-red-500">Message body cannot be empty.</p>
+            <motion.p
+            animate={{ x: [33, 0, 10] }}
+            transition={{duration: .3}}
+            className="
+            text-red-500
+            p-1">Message body cannot be empty.</motion.p>
           )}
           
           <div className="
@@ -347,7 +365,7 @@ export default function ContactUs() {
           pl-2
           text-start
           text-white
-          font-normal"
+          font-bold"
           initial='hidden'
           whileInView='visible'
           transition={{duration: 0.5}}
@@ -363,13 +381,15 @@ export default function ContactUs() {
           610 E Orange St &nbsp; Angleton, TX 77515 <br/>
           <br />
           <a className="
-          text-emerald-400"
+          underline
+          text-emerald-300"
           target='_blank'
           rel="noreferrer"
           href="mailto:contact@bomreptiles.com">contact@bomreptiles.com</a> <br />
           <br />
           <a className="
-          text-emerald-400"
+          underline
+          text-emerald-300"
           target='_blank'
           rel="noreferrer"
           href="tel:9792151378">(979) 215-1378</a>

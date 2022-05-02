@@ -101,7 +101,6 @@ export default function Home({image}) {
       {/* <Preview /> */}
       <Team />
       <ContactUs />
-      <Footer />
     </>
   )
 }
