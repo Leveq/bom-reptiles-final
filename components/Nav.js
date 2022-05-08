@@ -66,22 +66,40 @@ import { motion } from "framer-motion";
                     onClick={() => setToggle(false)}
                     className={navStyles.app__navbar_links}>
                     <Link passHref href='/'>
-                      <motion.a variants={item} >Home</motion.a>
+                      <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      variants={item} >Home</motion.a>
                     </Link>
                     <Link passHref href='feeders'>
-                    <motion.a  variants={item} >Feeders</motion.a>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Feeders</motion.a>
                     </Link>
                     <Link passHref href='supplies'>
-                    <motion.a variants={item} >Supplies</motion.a>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Supplies</motion.a>
                     </Link>
                     <Link passHref href='merch'>
-                    <motion.a variants={item} >Merch</motion.a>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Merch</motion.a>
                     </Link>
                     <Link passHref href='services'>
-                    <motion.a variants={item} >Services</motion.a>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Services</motion.a>
                     </Link>
                     <Link passHref href='education'>
-                    <motion.a variants={item} >Education</motion.a>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Education</motion.a>
                     </Link>
                   </motion.ul>
                 </motion.div>
