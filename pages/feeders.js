@@ -40,7 +40,8 @@ function Feeders() {
       setanimateCard([{y: 0, opacity: 1}]);
 
       if(item === 'All') {
-        setFilterMice(mice, rat);
+        setFilterMice(mice);
+        setFilterRat(rat);
         
       } else {
         setFilterMice(mice.filter((mice) => mice.tags.includes(item))) || 
@@ -56,7 +57,7 @@ function Feeders() {
       flex
       flex-col
       relative
-      h-full
+      h-screen
       pt-20">
         <motion.h1
         className={FeedStyles.linear__w}>
@@ -114,19 +115,17 @@ function Feeders() {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center mb-4">
+      <div className="flex flex-col md:flex-row items-center justify-center my-8">
         <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="
         grid
         grid-cols-4
-        gap-2
+        gap-4
         mx-4
         md:mb-0
         mb-4
-        min-h-0
-        h-80
         auto-rows-min
         auto-cols-min
         items-center
