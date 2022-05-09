@@ -57,7 +57,7 @@ function Feeders() {
       flex
       flex-col
       relative
-      h-screen
+      h-full
       pt-20">
         <motion.h1
         className={FeedStyles.linear__w}>
