@@ -81,11 +81,24 @@ function Feeders() {
         text-center
         text-sm
         md:text-lg
-        p-5
+        p-2
         leading-loose
         2xl:text-xl
         2xl:leading-8">
           By appointment only. Contact us to place an order!
+        </motion.p>
+        <motion.p
+        className="
+        italic
+        text-blue-400
+        text-center
+        text-xs
+        pb-2
+        md:text-sm
+        leading-loose
+        2xl:text-sm
+        2xl:leading-8">
+          Prices subject to change
         </motion.p>
       <div
       className='
@@ -125,7 +138,8 @@ function Feeders() {
         gap-4
         mx-4
         md:mb-0
-        mb-4
+        mb-14
+        h-full
         auto-rows-min
         auto-cols-min
         items-center
@@ -133,16 +147,16 @@ function Feeders() {
         whitespace-nowrap
         max-w-max
         rounded
-        bg-neutral-200
         overflow-hidden
-        shadow-lg">
+        shadow-2xl">
          {filterMice.map((mice, index) => (
-           <div key={index}>
-             <ul className='px-1 mx-1'>
-               <li className='font-bold'>{mice.name}</li>
+           <div className='h-26' key={index}>
+             <ul className='py-4 px-1 mx-1'>
+               <li className='font-bold text-emerald-400'>{mice.name}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  text-red-500
@@ -150,7 +164,8 @@ function Feeders() {
                    {mice.quantity}</span> - ${mice.price}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  text-red-500
@@ -158,7 +173,8 @@ function Feeders() {
                    {mice.quantity6}</span> - ${mice.price6}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  text-red-500
@@ -182,19 +198,19 @@ function Feeders() {
         items-center
         justify-center
         whitespace-nowrap
-        container-xl
         max-w-max
+        h-full
         rounded
-        bg-neutral-200
         overflow-hidden
-        shadow-lg">
+        shadow-2xl">
          {filterRat.map((rat, index) => (
-           <div className='h-24' key={index}>
-             <ul className='px-1 mx-1'>
-               <li className='font-bold'>{rat.name}</li>
+           <div className='h-26' key={index}>
+             <ul className='py-2 px-1 mx-1'>
+               <li className='font-bold text-emerald-400'>{rat.name}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  font-bold
@@ -202,7 +218,8 @@ function Feeders() {
                    {rat.quantity}</span> - ${rat.price}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  font-bold
@@ -210,7 +227,8 @@ function Feeders() {
                    {rat.quantity6}</span> - ${rat.price6}</li>
                <li
                className='
-               font-normal'>
+               font-normal
+               text-white'>
                  <span
                  className='
                  font-bold
