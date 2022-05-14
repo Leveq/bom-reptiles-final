@@ -2,7 +2,7 @@ import React from 'react'
 
 export const merch = () => {
   return (
-    <div>
+    <div className='h-screen'>
       <h1>
         Merch
       </h1>
