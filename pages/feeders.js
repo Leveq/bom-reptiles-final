@@ -9,8 +9,11 @@ function Feeders() {
   const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 });
   const [mice, setMice] = useState([]);
   const [rat, setRat] = useState([]);
+  const [live, setLive] = useState([]);
   const [filterMice, setFilterMice] = useState([]);
   const [filterRat, setFilterRat] = useState([]);
+  const [filterLive, setFilterLive] = useState([]);
+  
 
   useEffect(() => {
     const query = '*[_type == "mice"]';
@@ -19,6 +22,16 @@ function Feeders() {
     .then((data) => {
       setMice(data);
       setFilterMice(data);
+    })
+  }, [])
+  
+  useEffect(() => {
+    const query = '*[_type == "live"]';
+
+    client.fetch(query)
+    .then((data) => {
+      setLive(data);
+      setFilterLive(data);
     })
   }, [])
 
@@ -42,10 +55,12 @@ function Feeders() {
       if(item === 'All') {
         setFilterMice(mice);
         setFilterRat(rat);
+        setFilterLive(live);
         
       } else {
         setFilterMice(mice.filter((mice) => mice.tags.includes(item))) || 
-        setFilterRat(rat.filter((rat) => rat.tags.includes(item)))
+        setFilterRat(rat.filter((rat) => rat.tags.includes(item))) ||
+        setFilterLive(live.filter((live) => live.tags.includes(item)))
       } 
     }, 500);
   }
@@ -181,8 +196,7 @@ function Feeders() {
                  font-bold'>{mice.quantity12}</span> - ${mice.price12}</li>
              </ul>
            </div>
-         ))}
-         
+         ))} 
       </motion.div>
       <motion.div
         animate={animateCard}
@@ -237,6 +251,79 @@ function Feeders() {
              </ul>
            </div>
          ))}
+      </motion.div>
+      <motion.div
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="
+        grid
+        grid-cols-4
+        gap-1
+        mx-4
+        md:mb-0
+        mb-14
+        h-full
+        auto-rows-min
+        auto-cols-min
+        items-center
+        justify-center
+        whitespace-nowrap
+        max-w-max
+        rounded
+        overflow-hidden
+        shadow-2xl">
+         {filterLive.map((live, index) => (
+           <div className='h-26' key={index}>
+             <ul className='py-4 px-1 mx-1'>
+               <li className='text-xs md:text-sm font-bold text-emerald-400'>{live.name}</li>
+               <li
+               className='
+               font-normal
+               text-white'>
+                 <span
+                 className='
+                 text-red-500
+                 font-bold'>
+                   {live.quantity}</span> - ${live.price}</li>
+               <li
+               className='
+               font-normal
+               text-white'>
+                 <span
+                 className='
+                 text-red-500
+                 font-bold'>
+                   {live.quantity2}</span> - ${live.price2}</li>
+               <li
+               className='
+               font-normal
+               text-white'>
+                 <span
+                 className='
+                 text-red-500
+                 font-bold'>
+                   {live.quantity3}</span> - ${live.price3}</li>
+              <li
+               className='
+               font-normal
+               text-white'>
+                 <span
+                 className='
+                 text-red-500
+                 font-bold'>
+                   {live.quantity4}</span> - ${live.price4}</li>
+              <li
+               className='
+               font-normal
+               text-white'>
+                 <span
+                 className='
+                 text-red-500
+                 font-bold'>
+                   {live.quantity5}</span> - ${live.price5}</li>
+             </ul>
+           </div>
+         ))} 
       </motion.div>
       </div> 
     </div>
