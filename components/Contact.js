@@ -94,7 +94,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="
+    <div id="contactus" className="
     flex
     lg:flex-row
     md:flex-col

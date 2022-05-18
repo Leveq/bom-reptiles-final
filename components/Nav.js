@@ -38,17 +38,20 @@ import { motion } from "framer-motion";
             <Link href='/feeders'>
               Feeders
             </Link>
-            <Link href='/supplies'>
+            {/* <Link href='/supplies'>
               Supplies
-            </Link>
-            <Link href='/merch'>
+            </Link> */}
+            {/* <Link href='/merch'>
               Merch
-            </Link>
+            </Link> */}
             <Link href='/services'>
               Services
             </Link>
             <Link href='/education'>
               Education
+            </Link>
+            <Link href='/#contactus'>
+              Contact
             </Link>
           </ul>
           <div className={navStyles.app__navbar_menu}>
@@ -77,18 +80,18 @@ import { motion } from "framer-motion";
                     whileTap={{ scale: 0.95 }}
                     variants={item} >Feeders</motion.a>
                     </Link>
-                    <Link passHref href='supplies'>
+                    {/* <Link passHref href='supplies'>
                     <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     variants={item} >Supplies</motion.a>
-                    </Link>
-                    <Link passHref href='merch'>
+                    </Link> */}
+                    {/* <Link passHref href='merch'>
                     <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     variants={item} >Merch</motion.a>
-                    </Link>
+                    </Link> */}
                     <Link passHref href='services'>
                     <motion.a
                     whileHover={{ scale: 1.1 }}
@@ -100,6 +103,12 @@ import { motion } from "framer-motion";
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     variants={item} >Education</motion.a>
+                    </Link>
+                    <Link passHref href='/#contactus'>
+                    <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    variants={item} >Contact</motion.a>
                     </Link>
                   </motion.ul>
                 </motion.div>
