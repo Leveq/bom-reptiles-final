@@ -207,6 +207,7 @@ function Feeders() {
         gap-4
         mx-4
         min-h-80
+        mb-14
         auto-rows-min
         auto-cols-min
         items-center
@@ -283,7 +284,8 @@ function Feeders() {
                  <span
                  className='
                  text-red-500
-                 font-bold'>
+                 md:font-bold
+                 font-semibold'>
                    {live.quantity}</span> - ${live.price}</li>
                <li
                className='
@@ -292,7 +294,8 @@ function Feeders() {
                  <span
                  className='
                  text-red-500
-                 font-bold'>
+                 md:font-bold
+                 font-semibold'>
                    {live.quantity2}</span> - ${live.price2}</li>
                <li
                className='
@@ -301,7 +304,8 @@ function Feeders() {
                  <span
                  className='
                  text-red-500
-                 font-bold'>
+                 md:font-bold
+                 font-semibold'>
                    {live.quantity3}</span> - ${live.price3}</li>
               <li
                className='
@@ -310,7 +314,8 @@ function Feeders() {
                  <span
                  className='
                  text-red-500
-                 font-bold'>
+                 md:font-bold
+                 font-semibold'>
                    {live.quantity4}</span> - ${live.price4}</li>
               <li
                className='
@@ -319,7 +324,8 @@ function Feeders() {
                  <span
                  className='
                  text-red-500
-                 font-bold'>
+                 md:font-bold
+                 font-semibold'>
                    {live.quantity5}</span> - ${live.price5}</li>
              </ul>
            </div>
