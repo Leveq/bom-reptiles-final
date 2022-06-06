@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Header from "../components/Header";
 
 const services = () => {
   return (
-    <div className='h-screen'>services</div>
-  )
-}
+    <>
+      <Header />
+    </>
+  );
+};
 
-export default services
+export default services;
