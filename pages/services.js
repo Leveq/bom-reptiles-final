@@ -42,12 +42,12 @@ const services = () => {
               h-fit"
               key={service.name}
             >
-              <div className="flex justify-center">
+              <div className="flex justify-self-start">
                 <Image
-                  className="rounded-lg h-auto"
-                  width={500}
-                  height={500}
-                  objectFit="contain"
+                  className="rounded-lg w-auto h-fit"
+                  width={600}
+                  height={600}
+                  objectFit="cover"
                   src={urlFor(service.imgUrl).url()}
                   alt={service.name}
                 />
