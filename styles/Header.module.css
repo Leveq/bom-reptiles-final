@@ -32,6 +32,10 @@
   .linear__w {
     font-size: 8rem;
   }
+
+  .hero {
+    padding-top: 80px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -42,5 +46,5 @@
 
 .hero {
   height: 50vh;
-  padding-top: 80px;
+  padding-top: 60px;
 }

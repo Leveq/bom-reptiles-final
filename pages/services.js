@@ -26,34 +26,35 @@ const services = () => {
         justify-center
         items-center"
       >
-        <div className="flex flex-row flex-wrap justify-center">
+        <div className="flex flex-row flex-wrap justify-evenly">
           {services.map((service, index) => (
             <div
               className="flex
-              md:flex-row
+              sm:flex-row
               flex-col
               justify-start
               mx-3
               my-3
               rounded-lg
               shadow-lg
-              lg:max-w-xl
               2xl:max-w-2xl
-              md:h-48
-              h-full"
+              max-w-4xl
+              h-auto"
               key={service.name}
             >
-              <Image
-                className="w-full h-full rounded-lg"
-                width={500}
-                height={500}
-                objectFit="cover"
-                src={urlFor(service.imgUrl).url()}
-                alt={service.name}
-              />
-              <div className="flex flex-col break-normal justify-center">
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-lg h-fit"
+                  width={500}
+                  height={350}
+                  objectFit="cover"
+                  src={urlFor(service.imgUrl).url()}
+                  alt={service.name}
+                />
+              </div>
+              <div className="flex flex-col relative break-normal justify-center">
                 <h1
-                  className="py-3 px-3 text-xl text-emerald-400"
+                  className="font-bold py-3 px-3 text-xl text-emerald-400"
                   key={service.name}
                 >
                   {service.title}
