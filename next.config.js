@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
+};
 
 const STUDIO_REWRITE = {
   source: "/studio/:path*",
@@ -15,7 +15,7 @@ module.exports = {
   rewrites: () => [STUDIO_REWRITE],
   nextConfig,
   images: {
-    domains: ['images.unsplash.com']
+    domains: ["images.unsplash.com", "cdn.sanity.io"],
   },
 
   experimental: {
@@ -24,5 +24,3 @@ module.exports = {
     },
   },
 };
-
-
