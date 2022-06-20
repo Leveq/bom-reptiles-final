@@ -26,7 +26,7 @@ const services = () => {
         justify-center
         items-center"
       >
-        <div className="flex flex-row flex-wrap justify-evenly">
+        <div className="flex h-auto flex-row flex-wrap justify-evenly">
           {services.map((service, index) => (
             <div
               className="flex
@@ -39,15 +39,15 @@ const services = () => {
               shadow-lg
               2xl:max-w-2xl
               max-w-4xl
-              h-auto"
+              h-fit"
               key={service.name}
             >
               <div className="flex justify-center">
                 <Image
-                  className="rounded-lg h-fit"
+                  className="rounded-lg h-auto"
                   width={500}
-                  height={350}
-                  objectFit="cover"
+                  height={500}
+                  objectFit="contain"
                   src={urlFor(service.imgUrl).url()}
                   alt={service.name}
                 />
