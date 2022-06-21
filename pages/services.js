@@ -3,7 +3,7 @@ import { client, urlFor } from "../lib/sanity";
 import Header from "../components/Header";
 import Image from "next/image";
 
-const services = () => {
+const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -39,8 +39,12 @@ const services = () => {
               shadow-lg
               2xl:max-w-2xl
               max-w-4xl
-              h-fit"
-              key={service.name}
+              h-fit
+              md:hover:scale-110
+              transition ease-in-out
+              delay-100
+              duration-300"
+              key={index}
             >
               <div className="flex justify-self-start">
                 <Image
@@ -69,4 +73,4 @@ const services = () => {
   );
 };
 
-export default services;
+export default Services;
