@@ -1,26 +1,33 @@
 export default {
-    name: 'rat',
-    title: 'Rat',
-    type: 'document',
-    fields: [
-        {name: 'name', type: 'string', title: 'Rat name'},
-        {name: 'quantity', type: 'string', title: 'Quantity'},
-        {name: 'price', type: 'string', title: 'Price'},
-        {name: 'quantity6', type: 'string', title: 'Quantity(6)'},
-        {name: 'price6', type: 'string', title: 'Price'},
-        {name: 'quantity12', type: 'string', title: 'Quantity(12)'},
-        {name: 'price12', type: 'string', title: 'Price'},
+  name: "rat",
+  title: "Rat",
+  type: "document",
+  fields: [
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
+    { name: "name", type: "string", title: "Rat name" },
+
+    {
+      title: "Prices",
+      name: "prices",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [
         {
-            name: 'tags',
-            title: 'Tags',
-           type:'array',
-           of: [
-             {
-               name:'tag',
-               title:'Tag',
-               type:'string'
-             }
-           ]
-          },
-    ]
-}
+          name: "tag",
+          title: "Tag",
+          type: "string",
+        },
+      ],
+    },
+  ],
+};
