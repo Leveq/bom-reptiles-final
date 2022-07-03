@@ -6,9 +6,8 @@ import menu from "../styles/Feeders.module.css";
 
 const tabs = ["Rats", "Mice", "Live", "Other"];
 
-const FeederMenu = ({ currentItem }) => {
+const FeederMenu = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 });
   const [mice, setMice] = useState([]);
   const [rat, setRat] = useState([]);
   const [live, setLive] = useState([]);
@@ -26,7 +25,7 @@ const FeederMenu = ({ currentItem }) => {
   }, []);
 
   useEffect(() => {
-    const query = '*[_type == "live"]';
+    const query = '*[_type == "live"] | order(order asc)';
 
     client.fetch(query).then((data) => {
       setLive(data);
@@ -66,55 +65,64 @@ const FeederMenu = ({ currentItem }) => {
         </nav>
         <main>
           <AnimatePresence exitBeforeEnter>
-            <motion.div
-              className={menu.ulGrid}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              {selectedTab === "Rats" && (
-                <motion.div
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -100, opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className={menu.grid}
-                >
-                  {filterRat.map((rat, index) => (
-                    <motion.ul
-                      exit={{ y: -100, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className={menu.ulGrid}
-                      key={index}
-                    >
-                      <span className="text-blue-500">{rat.name}</span>
-                      <li>{rat.prices[0]}</li>
-                      <li>{rat.prices[1]}</li>
-                      <li>{rat.prices[2]}</li>
-                    </motion.ul>
-                  ))}
-                </motion.div>
-              )}
-              {selectedTab === "Mice" && (
-                <div className={menu.grid}>
-                  {filterMice.map((mice, index) => (
-                    <motion.ul
-                      className={menu.ulGrid}
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.5 }}
-                      key={index}
-                    >
-                      <span className="text-blue-500">{mice.name}</span>
-                      <li>{mice.prices[0]}</li>
-                      <li>{mice.prices[1]}</li>
-                      <li>{mice.prices[2]}</li>
-                    </motion.ul>
-                  ))}
-                </div>
-              )}
-            </motion.div>
+            {selectedTab === "Rats" && (
+              <motion.div
+                key={selectedTab ? "Rats" : "empty"}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className={menu.grid}
+              >
+                {filterRat.map((rats, index) => (
+                  <motion.ul key={index} className={menu.ulGrid}>
+                    <span className="text-blue-500">{rats.name}</span>
+                    {rats.prices.map((price) => (
+                      <li key={price}>{price}</li>
+                    ))}
+                  </motion.ul>
+                ))}
+              </motion.div>
+            )}
+
+            {selectedTab === "Mice" && (
+              <motion.div
+                key={selectedTab ? "Mice" : "empty"}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className={menu.grid}
+              >
+                {filterMice.map((mice, index) => (
+                  <motion.ul key={index} className={menu.ulGrid}>
+                    <span className="text-blue-500">{mice.name}</span>
+                    {mice.prices.map((price) => (
+                      <li key={price}>{price}</li>
+                    ))}
+                  </motion.ul>
+                ))}
+              </motion.div>
+            )}
+            {selectedTab === "Live" && (
+              <motion.div
+                key={selectedTab ? "Live" : "empty"}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className={menu.grid}
+              >
+                {filterLive.map((live, index) => (
+                  <motion.ul key={index} className={menu.ulGrid}>
+                    <span className="text-blue-500">{live.name}</span>
+                    {live.prices.map((price) => (
+                      <li key={price}>{price}</li>
+                    ))}
+                  </motion.ul>
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </main>
       </div>
