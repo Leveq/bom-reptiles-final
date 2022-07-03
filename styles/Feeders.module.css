@@ -172,7 +172,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   justify-content: center;
   padding: 0.5rem 0 0 8px;
   font-family: "Poppins", sans-serif;

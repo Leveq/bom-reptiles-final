@@ -11,9 +11,11 @@ const FeederMenu = () => {
   const [mice, setMice] = useState([]);
   const [rat, setRat] = useState([]);
   const [live, setLive] = useState([]);
+  const [other, setOther] = useState([]);
   const [filterMice, setFilterMice] = useState([]);
   const [filterRat, setFilterRat] = useState([]);
   const [filterLive, setFilterLive] = useState([]);
+  const [filterOther, setFilterOther] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "mice"] | order(order asc)';
@@ -39,6 +41,15 @@ const FeederMenu = () => {
     client.fetch(query).then((data) => {
       setRat(data);
       setFilterRat(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const query = '*[_type == "other"] | order(order asc)';
+
+    client.fetch(query).then((data) => {
+      setOther(data);
+      setFilterOther(data);
     });
   }, []);
 
@@ -118,6 +129,27 @@ const FeederMenu = () => {
                     <span className="text-blue-500">{live.name}</span>
                     {live.prices.map((price) => (
                       <li key={price}>{price}</li>
+                    ))}
+                  </motion.ul>
+                ))}
+              </motion.div>
+            )}
+            {selectedTab === "Other" && (
+              <motion.div
+                key={selectedTab ? "Other" : "empty"}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className={menu.grid}
+              >
+                {filterOther.map((other, index) => (
+                  <motion.ul key={index} className={menu.ulGrid}>
+                    <span className="text-blue-500">{other.name}</span>
+                    {other.prices.map((price) => (
+                      <li className="text-start text-xs" key={price}>
+                        {price}
+                      </li>
                     ))}
                   </motion.ul>
                 ))}
