@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
+
+.linear__w {
+  text-align: center;
+  font-size: 6rem;
+  font-family: "Saira Stencil One", Arial, Helvetica, sans-serif;
+
+  background: linear-gradient(
+    to right,
+    #059669 20%,
+    #34d399 40%,
+    #34d399 60%,
+    #059669 80%
+  );
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 7s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .linear__w {
+    font-size: 8rem;
+  }
+
+  .hero {
+    padding-top: 80px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .linear__w {
+    font-size: 4rem;
+  }
+}
+
+.hero {
+  height: 50vh;
+  padding-top: 60px;
+}

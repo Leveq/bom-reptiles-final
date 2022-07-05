@@ -146,8 +146,8 @@ const FeederMenu = () => {
                 {filterOther.map((other, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
                     <span className="text-blue-500">{other.name}</span>
-                    {other.prices.map((price) => (
-                      <li className="text-start text-xs" key={price}>
+                    {other.prices.map((price, index) => (
+                      <li className="text-start text-xs" key={index}>
                         {price}
                       </li>
                     ))}

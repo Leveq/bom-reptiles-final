@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FeederMenu from "../components/FeederMenu";
 import { motion } from "framer-motion";
-import client from "../lib/sanity";
 
 import FeedStyles from "../styles/Feeders.module.css";
 

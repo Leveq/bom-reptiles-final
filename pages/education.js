@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import eduStyles from "../styles/Education.module.css";
 
 const education = () => {
   return (
-    <div className='h-screen'>education</div>
-  )
-}
+    <>
+      <div className={eduStyles.hero}>
+        <h1 className={eduStyles.linear__w}>Education</h1>
+      </div>
+    </>
+  );
+};
 
-export default education
+export default education;
