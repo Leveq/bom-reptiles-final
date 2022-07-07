@@ -67,7 +67,7 @@ function Feeders() {
       </div>
       <FeederMenu />
       <div className="md:hidden flex justify-center pt-4">
-        <motion.button
+        <motion.a
           className="
         inline-flex
         items-center
@@ -81,10 +81,11 @@ function Feeders() {
         mb-2
         text-center"
           whileTap={{ scale: 0.9 }}
+          href="tel:9792151378"
         >
           <span className="pr-1">Call</span> <BsFillTelephoneOutboundFill />
-        </motion.button>
-        <motion.button
+        </motion.a>
+        <motion.a
           className="
           inline-flex
           items-center
@@ -98,9 +99,10 @@ function Feeders() {
           mb-2
           text-center"
           whileTap={{ scale: 0.9 }}
+          href="sms:9792151378"
         >
           <span className="pr-1">Text</span> <BsFillChatLeftTextFill />
-        </motion.button>
+        </motion.a>
       </div>
     </>
   );
