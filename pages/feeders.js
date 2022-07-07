@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  BsFillTelephoneOutboundFill,
+  BsFillChatLeftTextFill,
+} from "react-icons/bs";
 import FeederMenu from "../components/FeederMenu";
 import { motion } from "framer-motion";
 
@@ -40,7 +44,11 @@ function Feeders() {
         2xl:text-xl
         2xl:leading-8"
         >
-          By appointment only. Contact us to place an order!
+          By appointment only.&nbsp;
+          <Link href="/#contactus">
+            <a className="underline text-emerald-300">Contact</a>
+          </Link>
+          &nbsp;us to place an order!
         </motion.p>
         <motion.p
           className="
@@ -58,6 +66,42 @@ function Feeders() {
         </motion.p>
       </div>
       <FeederMenu />
+      <div className="md:hidden flex justify-center pt-4">
+        <motion.button
+          className="
+        inline-flex
+        items-center
+        rounded-full
+        text-white
+        bg-pink-600
+        drop-shadow-lg
+        px-10
+        py-2.5
+        mr-2
+        mb-2
+        text-center"
+          whileTap={{ scale: 0.9 }}
+        >
+          <span className="pr-1">Call</span> <BsFillTelephoneOutboundFill />
+        </motion.button>
+        <motion.button
+          className="
+          inline-flex
+          items-center
+          rounded-full
+          text-white
+          bg-pink-600
+          drop-shadow-lg
+          px-10
+          py-2.5
+          mr-2
+          mb-2
+          text-center"
+          whileTap={{ scale: 0.9 }}
+        >
+          <span className="pr-1">Text</span> <BsFillChatLeftTextFill />
+        </motion.button>
+      </div>
     </>
   );
 }

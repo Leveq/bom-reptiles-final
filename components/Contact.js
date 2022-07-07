@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ContactUs() {
-   // States for contact form fields
+  // States for contact form fields
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -94,7 +94,9 @@ export default function ContactUs() {
   };
 
   return (
-    <div id="contactus" className="
+    <div
+      id="contactus"
+      className="
     flex
     lg:flex-row
     md:flex-col
@@ -102,25 +104,28 @@ export default function ContactUs() {
     justify-center
     flex-row
     flex-col
-    w-full">
-    <motion.div className="
+    w-full"
+    >
+      <motion.div
+        className="
     container
     w-full
     lg:w-1/2
     mx-0
     basis-5/12"
-    initial='hidden'
-      whileInView='visible'
-      transition={{duration: .8}}
-      variants={{
-        hidden: {
-          opacity: 0
-        },
-        visible: {
-          opacity: 1
-        }
-      }}>
-      <form
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 0.8 }}
+        variants={{
+          hidden: {
+            opacity: 0,
+          },
+          visible: {
+            opacity: 1,
+          },
+        }}
+      >
+        <form
           onSubmit={handleSubmit}
           className="
           rounded-lg
@@ -130,11 +135,13 @@ export default function ContactUs() {
           py-6
           bg-transparent"
         >
-          <h1 className="
+          <h1
+            className="
           text-2xl
           font-bold
           text-white
-          pb-5">
+          pb-5"
+          >
             Send a <span className="text-emerald-400">message</span>
           </h1>
 
@@ -175,10 +182,13 @@ export default function ContactUs() {
           />
           {errors?.fullname && (
             <motion.p
-            animate={{ x: [33, 0, 10] }}
-            transition={{duration: .3}}
-            className="
-            text-red-500 p-1">Name cannot be empty.</motion.p>
+              animate={{ x: [33, 0, 10] }}
+              transition={{ duration: 0.3 }}
+              className="
+            text-red-500 p-1"
+            >
+              Name cannot be empty.
+            </motion.p>
           )}
 
           <label
@@ -219,10 +229,13 @@ export default function ContactUs() {
           />
           {errors?.email && (
             <motion.p
-            animate={{ x: [33, 0, 10] }}
-            transition={{duration: .3}}
-            className="
-            text-red-500 p-1">Email cannot be empty.</motion.p>
+              animate={{ x: [33, 0, 10] }}
+              transition={{ duration: 0.3 }}
+              className="
+            text-red-500 p-1"
+            >
+              Email cannot be empty.
+            </motion.p>
           )}
 
           <label
@@ -261,13 +274,16 @@ export default function ContactUs() {
             focus:bg-white
             focus:border-gray-500"
           />
-         {errors?.subject && (
+          {errors?.subject && (
             <motion.p
-            animate={{ x: [33, 0, 10] }}
-            transition={{duration: .3}}
-            className="
+              animate={{ x: [33, 0, 10] }}
+              transition={{ duration: 0.3 }}
+              className="
             text-red-500
-            p-1">Subject cannot be empty.</motion.p>
+            p-1"
+            >
+              Subject cannot be empty.
+            </motion.p>
           )}
 
           <label
@@ -311,19 +327,24 @@ export default function ContactUs() {
           ></textarea>
           {errors?.message && (
             <motion.p
-            animate={{ x: [33, 0, 10] }}
-            transition={{duration: .3}}
-            className="
+              animate={{ x: [33, 0, 10] }}
+              transition={{ duration: 0.3 }}
+              className="
             text-red-500
-            p-1">Message body cannot be empty.</motion.p>
+            p-1"
+            >
+              Message body cannot be empty.
+            </motion.p>
           )}
-          
-          <div className="
+
+          <div
+            className="
           flex
           w-full
           flex-row
           items-center
-          justify-start">
+          justify-start"
+          >
             <button
               type="submit"
               className="px-10
@@ -336,65 +357,78 @@ export default function ContactUs() {
               text-lg
               font-bold
               text-center
-              shadow-xl">
-            {buttonText}
+              shadow-xl"
+            >
+              {buttonText}
             </button>
           </div>
           {showSuccessMessage && (
-              <p className="animate-pulse text-emerald-400 font-bold my-2">
-                Thanks!! Your message has been sent 😎
-              </p>
-            )}
-            {showFailureMessage && (
-              <p className="text-red-500">
-                Oops! Something went wrong, please try again.
-              </p>
-            )}
+            <p className="animate-pulse text-emerald-400 font-bold my-2">
+              Thanks!! Your message has been sent 😎
+            </p>
+          )}
+          {showFailureMessage && (
+            <p className="text-red-500">
+              Oops! Something went wrong, please try again.
+            </p>
+          )}
         </form>
-    </motion.div>
-    <motion.div className="container lg:w-1/2 mx-0 md:items-center">
-            <iframe className="mb-3 mx-0 basis-1/2 lg:w-10/12 lg:mt-6"
-            width="100%"
-            height="300"
-            frameBorder="0"
-            referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCO-jyW66C7l6GKQn6PDUC4_MQlfhsbumQ&q=Bom+Reptiles,Angleton+Texas"
-            allowFullScreen>
-          </iframe>
-          <motion.p className="
+      </motion.div>
+      <motion.div className="container lg:w-1/2 mx-0 md:items-center">
+        <iframe
+          className="mb-3 mx-0 basis-1/2 lg:w-10/12 lg:mt-6"
+          width="100%"
+          height="300"
+          frameBorder="0"
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCO-jyW66C7l6GKQn6PDUC4_MQlfhsbumQ&q=Bom+Reptiles,Angleton+Texas"
+          allowFullScreen
+        ></iframe>
+        <motion.p
+          className="
           pl-2
           text-start
           text-white
           font-bold"
-          initial='hidden'
-          whileInView='visible'
-          transition={{duration: 0.5}}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.5 }}
           variants={{
-          hidden: {
-            opacity: 0
-          },
-          visible: {
-            opacity: 1
-          }
-        }}>
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }}
+        >
           Bottom of the Map Reptiles <br />
-          610 E Orange St &nbsp; Angleton, TX 77515 <br/>
+          610 E Orange St &nbsp; Angleton, TX 77515 <br />
           <br />
-          <a className="
+          <a
+            className="
           underline
-          text-emerald-300"
-          target='_blank'
-          rel="noreferrer"
-          href="mailto:contact@bomreptiles.com">contact@bomreptiles.com</a> <br />
+          text-blue-300"
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:contact@bomreptiles.com"
+          >
+            contact@bomreptiles.com
+          </a>{" "}
           <br />
-          <a className="
+          <br />
+          <a
+            className="
           underline
-          text-emerald-300"
-          target='_blank'
-          rel="noreferrer"
-          href="tel:9792151378">(979) 215-1378</a>
-          </motion.p>
-    </motion.div>
+          text-blue-300"
+            target="_blank"
+            rel="noreferrer"
+            href="tel:9792151378"
+          >
+            (979) 215-1378
+          </a>
+        </motion.p>
+      </motion.div>
     </div>
   );
 }
