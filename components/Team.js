@@ -60,7 +60,7 @@ const Team = () => {
           sm:text-4xl
           2xl:text-6xl"
       >
-        Who are we
+        Who are we?
       </motion.p>
       <div className="flex flex-col lg:flex-row">
         <div
