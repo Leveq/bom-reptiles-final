@@ -87,7 +87,9 @@ const FeederMenu = () => {
               >
                 {filterRat.map((rats, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
-                    <span className="text-blue-500">{rats.name}</span>
+                    <span className="text-blue-500 font-semibold">
+                      {rats.name}
+                    </span>
                     {rats.prices.map((price) => (
                       <li key={price}>{price}</li>
                     ))}
@@ -107,7 +109,9 @@ const FeederMenu = () => {
               >
                 {filterMice.map((mice, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
-                    <span className="text-blue-500">{mice.name}</span>
+                    <span className="text-blue-500 font-semibold">
+                      {mice.name}
+                    </span>
                     {mice.prices.map((price) => (
                       <li key={price}>{price}</li>
                     ))}
@@ -126,7 +130,9 @@ const FeederMenu = () => {
               >
                 {filterLive.map((live, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
-                    <span className="text-blue-500">{live.name}</span>
+                    <span className="text-blue-500 font-semibold">
+                      {live.name}
+                    </span>
                     {live.prices.map((price) => (
                       <li key={price}>{price}</li>
                     ))}
@@ -145,7 +151,9 @@ const FeederMenu = () => {
               >
                 {filterOther.map((other, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
-                    <span className="text-blue-500">{other.name}</span>
+                    <span className="text-blue-500 font-semibold">
+                      {other.name}
+                    </span>
                     {other.prices.map((price, index) => (
                       <li className="text-start text-xs" key={index}>
                         {price}
