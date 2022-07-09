@@ -8,6 +8,8 @@ import ratprice from "./prices/ratprice";
 import liveprice from "./prices/liveprice";
 import otherprice from "./prices/otherprice";
 import services from "./services";
+import posts from "./posts";
+import blockContent from "./blockContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,5 +23,7 @@ export default createSchema({
     liveprice,
     otherprice,
     services,
+    posts,
+    blockContent,
   ]),
 });
