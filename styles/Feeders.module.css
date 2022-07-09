@@ -40,6 +40,11 @@
   }
 }
 
+.hero {
+  height: 50vh;
+  padding-top: 60px;
+}
+
 /* MENU  */
 
 .container {

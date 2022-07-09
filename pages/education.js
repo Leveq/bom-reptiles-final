@@ -3,14 +3,16 @@ import client from "../lib/sanity";
 
 import eduStyles from "../styles/Education.module.css";
 
-const education = () => {
-  // const [post, setPosts] = useState([]);
+const Education = () => {
+  const [post, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   `*[ _type == "post"]` {
+  useEffect(() => {
+    const query = '*[_type == "posts"]';
 
-  //   }
-  // })
+    client.fetch(query).then((data) => {
+      setPosts(data);
+    });
+  }, []);
 
   return (
     <>
@@ -29,4 +31,4 @@ const education = () => {
   );
 };
 
-export default education;
+export default Education;

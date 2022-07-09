@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <motion.footer
       className="
-    text-center
-    lg:text-left
-    text-gray-100"
+      text-center
+      lg:text-left
+      text-gray-100"
       initial="hidden"
       whileInView="visible"
       transition={{ duration: 0.5 }}
@@ -23,17 +23,17 @@ const Footer = () => {
     >
       <div
         className="
-  flex
-  justify-center
-  items-center
-  lg:justify-between
-  p-6 border-b
-  border-emerald-100"
+        flex
+        justify-center
+        items-center
+        lg:justify-between
+        p-6 mt-24 border-t
+        border-emerald-100"
       >
         <div className="mr-12 hidden lg:block">
           <span>Get connected with us on social networks:</span>
         </div>
-        <div className="flex justify-center">
+        <div className="flex items-center">
           <a href="#!" className="mr-6 text-emerald-400">
             <svg
               aria-hidden="true"
@@ -51,14 +51,7 @@ const Footer = () => {
               ></path>
             </svg>
           </a>
-          {/* <a href="#!" className="mr-6 text-emerald-400">
-        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
-          className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="currentColor"
-            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
-          </path>
-        </svg>
-      </a> */}
+
           <a href="#!" className="mr-6 text-emerald-400">
             <svg
               aria-hidden="true"
@@ -95,36 +88,44 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="mx-6 py-10 text-center md:text-left">
-        <div className="grid grid-1 md:grid-cols-2 items-center lg:grid-cols-3 gap-8">
-          <div>
-            <h6
-              className="
-            uppercase
-            font-semibold
-            mb-4
+      <div className="mx-6 py-10 text-center">
+        <div
+          className="
+        grid
+        grid-1
+        md:grid-cols-3
+        items-center
+        lg:grid-cols-3
+        gap-8"
+        >
+          <div
+            className="
             flex
+            h-full
+            w-full
             items-center
             justify-center
-            md:justify-start
+            lg:flex-row
             flex-col
-            md:flex-row"
-            >
+            "
+          >
+            <div className="w-full text-center h-full">
               <Image
                 alt="Bomb logo"
                 src="/bomblogo.png"
-                height={150}
-                width={150}
+                objectFit="cover"
+                height={250}
+                width={250}
               />
-              Bottom of the Map Reptiles
-            </h6>
-            <p>
+            </div>
+
+            <p className="text-center">
               Here you can use rows and columns to organize your footer content.
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </p>
           </div>
-          <div className="">
-            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className="h-full flex flex-col justify-center">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center">
               Products
             </h6>
             <p className="mb-4">
@@ -148,10 +149,10 @@ const Footer = () => {
               </a>
             </p>
           </div>
-          <div className="">
+          <div className="h-full flex flex-col justify-center">
             <h6
               className="uppercase
-        font-semibold mb-4 flex justify-center md:justify-start"
+        font-semibold mb-4 flex justify-center"
             >
               Useful links
             </h6>
