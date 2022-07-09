@@ -1,7 +1,17 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import client from "../lib/sanity";
+
 import eduStyles from "../styles/Education.module.css";
 
 const education = () => {
+  // const [post, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   `*[ _type == "post"]` {
+
+  //   }
+  // })
+
   return (
     <>
       <div className={eduStyles.hero}>
