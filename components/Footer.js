@@ -34,7 +34,10 @@ const Footer = () => {
           <span>Get connected with us on social networks:</span>
         </div>
         <div className="flex items-center">
-          <a href="#!" className="mr-6 text-emerald-400">
+          <a
+            href="https://www.facebook.com/bomreptiles"
+            className="mr-6 text-emerald-400"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
@@ -69,7 +72,10 @@ const Footer = () => {
               ></path>
             </svg>
           </a>
-          <a href="#!" className="mr-6 text-emerald-400">
+          <a
+            href="https://www.instagram.com/bomreptiles/?hl=en"
+            className="mr-6 text-emerald-400"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
