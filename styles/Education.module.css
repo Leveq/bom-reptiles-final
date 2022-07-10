@@ -45,6 +45,7 @@
 }
 
 .hero {
+  position: relative;
   height: 50vh;
   padding-top: 60px;
 }

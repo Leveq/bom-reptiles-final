@@ -23,7 +23,10 @@ export const Post = ({ title, body, image }) => {
         )}
 
         <div className="text-justify text-white text-lg">
-          <BlockContent className="text-center leading-loose" blocks={body} />
+          <BlockContent
+            className="prose m-auto prose-p:text-white prose-li:marker:text-red-500 prose-strong:text-emerald-400 prose-li:text-white text-center leading-loose"
+            blocks={body}
+          />
         </div>
       </div>
     </>
