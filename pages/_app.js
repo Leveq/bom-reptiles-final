@@ -1,13 +1,16 @@
-import Layout from '../components/Layout'
-import '../styles/globals.css'
-import '../styles/tailwind.css'
+import Layout from "../components/Layout";
+import "../styles/globals.css";
+import "../styles/tailwind.css";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout> 
-  )
+    <AnimatePresence exitBeforeEnter>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AnimatePresence>
+  );
 }
 
-export default MyApp
+export default MyApp;

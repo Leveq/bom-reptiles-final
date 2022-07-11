@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { client, urlFor } from "../lib/sanity";
 import Header from "../components/Header";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -15,7 +16,11 @@ const Services = () => {
   }, []);
 
   return (
-    <>
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Header />
       <div
         className="
@@ -69,7 +74,7 @@ const Services = () => {
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

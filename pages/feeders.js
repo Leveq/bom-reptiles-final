@@ -10,8 +10,12 @@ import FeedStyles from "../styles/Feeders.module.css";
 
 function Feeders() {
   return (
-    <>
-      <div className={FeedStyles.hero}>
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div className={FeedStyles.hero}>
         <motion.h1 className={FeedStyles.linear__w}>Feeders</motion.h1>
         <motion.p
           className="
@@ -25,7 +29,7 @@ function Feeders() {
         >
           Frozen and Live Feeders
         </motion.p>
-      </div>
+      </motion.div>
       <FeederMenu />
       <div className="md:hidden flex justify-center pt-8">
         <motion.a
@@ -97,7 +101,7 @@ function Feeders() {
       >
         Prices subject to change
       </motion.p>
-    </>
+    </motion.div>
   );
 }
 

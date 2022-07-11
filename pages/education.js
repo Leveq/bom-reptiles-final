@@ -2,6 +2,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import eduStyles from "../styles/Education.module.css";
+import { motion } from "framer-motion";
 
 const Education = ({ posts }) => {
   const router = useRouter();
@@ -28,7 +29,11 @@ const Education = ({ posts }) => {
   }, [posts]);
 
   return (
-    <>
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className={eduStyles.hero}>
         <h1 className={eduStyles.linear__w}>Education</h1>
         <h1 className="pt-20 text-center text-white text-3xl">Recent Posts</h1>
@@ -69,7 +74,7 @@ const Education = ({ posts }) => {
           <>There are no posts</>
         )}
       </div>
-    </>
+    </motion.div>
   );
 };
 
