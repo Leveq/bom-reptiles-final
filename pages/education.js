@@ -64,7 +64,7 @@ const Education = ({ posts }) => {
               <h2 className="text-emerald-400 font-stencil text-2xl pb-4">
                 {p.title}
               </h2>
-              <h3 className="text-white pb-2">
+              <h3 className="text-white pb-2 italic">
                 {new Date(p.publishedAt).toDateString()}
               </h3>
               <img className="rounded-lg" alt="Article Image" src={p.image} />
