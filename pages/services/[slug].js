@@ -27,7 +27,7 @@ export const Service = ({ title, desc, image, whatToExpect }) => {
           {title}
         </h1>
         {imageUrl && (
-          <div className="max-h-fit pb-12 flex justify-center">
+          <div className="max-h-fit pb-12 px-2 flex justify-center">
             <Image
               className="h-fit rounded-lg"
               width={450}
@@ -37,10 +37,13 @@ export const Service = ({ title, desc, image, whatToExpect }) => {
             />
           </div>
         )}
-        <p className="mx-12 pb-5 text-justify text-white text-md">{desc}</p>
-        <p className="text-justify pb-5 mx-12 text-white italic text-sm">
-          <span className="text-blue-400">What to expect</span> : {whatToExpect}
-        </p>
+        <div className="md:mx-28">
+          <p className="mx-12 pb-5 text-justify text-white text-md">{desc}</p>
+          <p className="text-justify pb-5 mx-12 text-white italic text-sm">
+            <span className="text-blue-400">What to expect</span> :{" "}
+            {whatToExpect}
+          </p>
+        </div>
       </div>
       <div className="md:hidden flex justify-center pt-8">
         <a

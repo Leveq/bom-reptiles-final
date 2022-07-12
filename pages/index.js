@@ -91,15 +91,15 @@ export default function Home({ image }) {
             <Link href="/#About">
               <a
                 className="rounded-full
-          bg-emerald-500
-          shadow-lg
-          shadow-emerald-400/50
-          p-2
-          text-white
-          shadow-xl
-          animate-bounce
-          cursor-pointer
-          z-10"
+                bg-emerald-500
+                shadow-lg
+                shadow-emerald-400/50
+                p-2
+                text-white
+                shadow-xl
+                animate-bounce
+                cursor-pointer
+                z-10"
               >
                 Read More
               </a>
