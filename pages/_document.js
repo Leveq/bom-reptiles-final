@@ -7,7 +7,9 @@ export default class CustomDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="Welcome to B.O.M Reptiles, we provide custom elcosures and quality feeders. Contact us if you have any questions!"
+            content="Welcome to B.O.M Reptiles, 
+            we provide custom elcosures and quality feeders. 
+            Contact us if you have any questions!"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { client, urlFor } from "../lib/sanity";
+import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Image from "next/image";
+
 import { motion } from "framer-motion";
 
 const Services = () => {
+  const router = useRouter();
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -37,27 +40,31 @@ const Services = () => {
               className="flex
               sm:flex-row
               flex-col
-              justify-start
+              justify-center
+              items-center
               mx-3
               my-3
               rounded-lg
               shadow-lg
               2xl:max-w-2xl
               max-w-4xl
-              h-fit
-              md:hover:scale-110
+              md:max-h-96
+              lg:max-w-sm
+              md:hover:scale-105
               transition ease-in-out
               delay-100
-              duration-300"
+              duration-300
+              cursor-pointer"
               key={index}
+              onClick={() => router.push(`/services/${service.slug.current}`)}
             >
-              <div className="flex justify-self-start">
+              <div className="flex justify-center ">
                 <Image
-                  className="rounded-lg w-auto h-fit"
-                  width={600}
-                  height={600}
+                  className="rounded-lg"
+                  width={350}
+                  height={350}
                   objectFit="cover"
-                  src={urlFor(service.imgUrl).url()}
+                  src={urlFor(service.image).url()}
                   alt={service.name}
                 />
               </div>
@@ -68,7 +75,7 @@ const Services = () => {
                 >
                   {service.title}
                 </h1>
-                <p className="py-1 px-3 text-white">{service.description}</p>
+                <p className="py-1 px-3 text-white">{service.desc}</p>
               </div>
             </div>
           ))}

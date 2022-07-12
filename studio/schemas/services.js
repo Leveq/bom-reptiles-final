@@ -9,14 +9,36 @@ export default {
       type: "string",
     },
     {
-      name: "description",
-      title: "Description",
+      name: "desc",
+      title: "Short description",
       type: "string",
     },
     {
-      name: "imgUrl",
-      title: "ImageUrl",
+      name: "slug",
+      type: "slug",
+      title: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "whatToExpect",
+      title: "What to expect",
+      type: "text",
+    },
+    {
+      name: "image",
+      title: "Image",
       type: "image",
+      options: {
+        hotspot: true,
+      },
     },
   ],
 };
