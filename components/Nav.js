@@ -41,7 +41,7 @@ const Nav = () => {
             </Link> */}
           <Link href="/services">Services</Link>
           <Link href="/education">Education</Link>
-          <Link href="/#contactus">Contact</Link>
+          <Link href="/#team">Contact</Link>
         </ul>
         <div className={navStyles.app__navbar_menu}>
           <HiMenuAlt4 onClick={() => setToggle(true)} />

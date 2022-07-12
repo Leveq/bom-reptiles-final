@@ -4,6 +4,7 @@ import Image from "next/image";
 const Team = () => {
   return (
     <motion.div
+      id="team"
       className="
     flex
     flex-col

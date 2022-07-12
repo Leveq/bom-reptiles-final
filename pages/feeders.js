@@ -11,9 +11,9 @@ import FeedStyles from "../styles/Feeders.module.css";
 function Feeders() {
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ opacity: 0 }}
+    // initial={{ scale: 0.8, opacity: 0 }}
+    // animate={{ scale: 1, opacity: 1 }}
+    // exit={{ opacity: 0 }}
     >
       <motion.div className={FeedStyles.hero}>
         <motion.h1 className={FeedStyles.linear__w}>Feeders</motion.h1>

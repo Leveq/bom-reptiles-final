@@ -5,8 +5,8 @@ import Cases from "../components/Cases";
 import ContactUs from "../components/Contact";
 import Preview from "../components/Preview";
 import Team from "../components/Team";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+
 import Image from "next/image";
 
 export const getServerSideProps = async () => {

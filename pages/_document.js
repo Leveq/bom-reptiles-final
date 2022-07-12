@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 export default class CustomDocument extends Document {
   render() {
     return (
-      <Html className="scroll-smooth" style={{ scrollBehavior: "smooth" }}>
+      <Html>
         <Head>
           <meta
             name="description"
@@ -24,7 +24,6 @@ export default class CustomDocument extends Document {
         </Head>
         <body>
           <Main />
-          <strong className="text-emerald-400" />
         </body>
         <NextScript />
       </Html>
