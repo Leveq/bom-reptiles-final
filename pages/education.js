@@ -69,8 +69,6 @@ const Education = ({ posts }) => {
                 {new Date(p.publishedAt).toDateString()}
               </h3>
               <Image
-                placeholder="blur"
-                blurDataURL={`/_next/image?url=${p.image}&w=16&q=1`}
                 width={550}
                 height={250}
                 layout="intrinsic"

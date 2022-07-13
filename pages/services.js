@@ -73,9 +73,7 @@ const Services = ({ services }) => {
               <div className="flex justify-center h-full">
                 <Image
                   className="rounded-lg h-full"
-                  placeholder="blur"
                   layout="intrinsic"
-                  blurDataURL={`/_next/image?url=${s.image}&w=16&q=1`}
                   width={550}
                   height={450}
                   objectFit="cover"

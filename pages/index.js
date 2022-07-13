@@ -62,14 +62,13 @@ export default function Home({ image }) {
             whileInView="visible"
             variants={{
               hidden: {
-                scale: 0.8,
                 opacity: 0,
               },
               visible: {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                  duration: 0.4,
+                  duration: 1,
                 },
               },
             }}
