@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import imageUrlBuilder from "@sanity/image-url";
 import { client, urlFor } from "../lib/sanity";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
@@ -6,17 +7,29 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-const Services = () => {
+const Services = ({ services }) => {
   const router = useRouter();
-  const [services, setServices] = useState([]);
+  const [mappedServices, setMappedServices] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "services"]';
+    if (services.length) {
+      const imageBuilder = imageUrlBuilder({
+        projectId: "dsgnvorm",
+        dataset: "production",
+      });
 
-    client.fetch(query).then((data) => {
-      setServices(data);
-    });
-  }, []);
+      setMappedServices(
+        services.map((s) => {
+          return {
+            ...s,
+            image: imageBuilder.image(s.image).width(550).height(450),
+          };
+        })
+      );
+    } else {
+      setMappedServices([]);
+    }
+  }, [services]);
 
   return (
     <motion.div
@@ -28,14 +41,13 @@ const Services = () => {
       <div
         className="
         flex
-        py-4
-        flex-wrap
-        container
+        flex-col
+        md:flex-row
         justify-center
-        items-center"
+        h-full"
       >
-        <div className="flex h-auto flex-row flex-wrap justify-evenly">
-          {services.map((service, index) => (
+        <div className="flex h-auto flex-row min-h-full flex-wrap justify-evenly">
+          {mappedServices.map((s, index) => (
             <div
               className="flex
               sm:flex-row
@@ -56,26 +68,29 @@ const Services = () => {
               duration-300
               cursor-pointer"
               key={index}
-              onClick={() => router.push(`/services/${service.slug.current}`)}
+              onClick={() => router.push(`/services/${s.slug.current}`)}
             >
-              <div className="flex justify-center ">
+              <div className="flex justify-center h-full">
                 <Image
-                  className="rounded-lg"
-                  width={350}
-                  height={350}
+                  className="rounded-lg h-full"
+                  placeholder="blur"
+                  layout="intrinsic"
+                  blurDataURL={`/_next/image?url=${s.image}&w=16&q=1`}
+                  width={550}
+                  height={450}
                   objectFit="cover"
-                  src={urlFor(service.image).url()}
-                  alt={service.name}
+                  src={`${s.image}`}
+                  alt={s.name}
                 />
               </div>
               <div className="flex flex-col relative break-normal justify-center">
                 <h1
                   className="font-bold py-3 px-3 text-xl text-emerald-400"
-                  key={service.name}
+                  key={s.name}
                 >
-                  {service.title}
+                  {s.title}
                 </h1>
-                <p className="py-1 px-3 text-white">{service.desc}</p>
+                <p className="py-1 px-3 text-white">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -83,6 +98,26 @@ const Services = () => {
       </div>
     </motion.div>
   );
+};
+
+export const getServerSideProps = async (pageContext) => {
+  const query = encodeURIComponent('*[_type == "services"]');
+  const url = `https://dsgnvorm.api.sanity.io/v1/data/query/production?query=${query}`;
+  const result = await fetch(url).then((res) => res.json());
+
+  if (!result.result || !result.result.length) {
+    return {
+      props: {
+        services: [],
+      },
+    };
+  } else {
+    return {
+      props: {
+        services: result.result,
+      },
+    };
+  }
 };
 
 export default Services;

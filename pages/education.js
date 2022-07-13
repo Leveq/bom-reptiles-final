@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import eduStyles from "../styles/Education.module.css";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Education = ({ posts }) => {
   const router = useRouter();
@@ -67,7 +68,16 @@ const Education = ({ posts }) => {
               <h3 className="text-white pb-2 italic">
                 {new Date(p.publishedAt).toDateString()}
               </h3>
-              <img className="rounded-lg" alt="Article Image" src={p.image} />
+              <Image
+                placeholder="blur"
+                blurDataURL={`/_next/image?url=${p.image}&w=16&q=1`}
+                width={550}
+                height={250}
+                layout="intrinsic"
+                className="rounded-lg"
+                alt="Article Image"
+                src={`${p.image}`}
+              />
             </div>
           ))
         ) : (

@@ -8,21 +8,16 @@ const tabs = ["Rats", "Mice", "Live", "Other"];
 
 const FeederMenu = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  const [mice, setMice] = useState([]);
-  const [rat, setRat] = useState([]);
-  const [live, setLive] = useState([]);
-  const [other, setOther] = useState([]);
-  const [filterMice, setFilterMice] = useState([]);
-  const [filterRat, setFilterRat] = useState([]);
-  const [filterLive, setFilterLive] = useState([]);
-  const [filterOther, setFilterOther] = useState([]);
+  const [mappedMice, setMice] = useState([]);
+  const [mappedRat, setRat] = useState([]);
+  const [mappedLive, setLive] = useState([]);
+  const [mappedOther, setOther] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "mice"] | order(order asc)';
 
     client.fetch(query).then((data) => {
       setMice(data);
-      setFilterMice(data);
     });
   }, []);
 
@@ -31,7 +26,6 @@ const FeederMenu = () => {
 
     client.fetch(query).then((data) => {
       setLive(data);
-      setFilterLive(data);
     });
   }, []);
 
@@ -40,7 +34,6 @@ const FeederMenu = () => {
 
     client.fetch(query).then((data) => {
       setRat(data);
-      setFilterRat(data);
     });
   }, []);
 
@@ -49,7 +42,6 @@ const FeederMenu = () => {
 
     client.fetch(query).then((data) => {
       setOther(data);
-      setFilterOther(data);
     });
   }, []);
 
@@ -85,7 +77,7 @@ const FeederMenu = () => {
                 transition={{ duration: 0.2 }}
                 className={menu.grid}
               >
-                {filterRat.map((rats, index) => (
+                {mappedRat.map((rats, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
                     <span className="text-blue-500 font-semibold">
                       {rats.name}
@@ -107,7 +99,7 @@ const FeederMenu = () => {
                 transition={{ duration: 0.2 }}
                 className={menu.grid}
               >
-                {filterMice.map((mice, index) => (
+                {mappedMice.map((mice, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
                     <span className="text-blue-500 font-semibold">
                       {mice.name}
@@ -128,7 +120,7 @@ const FeederMenu = () => {
                 transition={{ duration: 0.2 }}
                 className={menu.grid}
               >
-                {filterLive.map((live, index) => (
+                {mappedLive.map((live, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
                     <span className="text-blue-500 font-semibold">
                       {live.name}
@@ -149,7 +141,7 @@ const FeederMenu = () => {
                 transition={{ duration: 0.2 }}
                 className={menu.grid}
               >
-                {filterOther.map((other, index) => (
+                {mappedOther.map((other, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>
                     <span className="text-blue-500 font-semibold">
                       {other.name}

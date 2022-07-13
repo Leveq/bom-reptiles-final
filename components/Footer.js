@@ -185,7 +185,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center bg-neutral-700 drop-shadow-lg p-6">
+      <div
+        className="
+        text-center
+        bg-neutral-700
+        drop-shadow-lg
+        p-6"
+      >
         <span>© 2022 Copyright:</span> &nbsp;
         <a className="text-gray-100 font-semibold" href="#">
           B.O.M Reptiles
