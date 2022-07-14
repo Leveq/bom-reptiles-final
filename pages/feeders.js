@@ -1,22 +1,28 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { createClient } from "next-sanity";
+import { config } from "../lib/config";
 import Link from "next/link";
 import {
   BsFillTelephoneOutboundFill,
   BsFillChatLeftTextFill,
 } from "react-icons/bs";
-import FeederMenu from "../components/FeederMenu";
-import { motion } from "framer-motion";
 
-import FeedStyles from "../styles/Feeders.module.css";
+import menu from "../styles/Feeders.module.css";
 
-function Feeders() {
+const tabs = ["Rats", "Mice", "Live", "Other"];
+
+function Feeders({ rats, mice, live, other }) {
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
   return (
     <motion.div
     // initial={{ scale: 0.8, opacity: 0 }}
     // animate={{ scale: 1, opacity: 1 }}
     // exit={{ opacity: 0 }}
     >
-      <motion.div className={FeedStyles.hero}>
-        <motion.h1 className={FeedStyles.linear__w}>Feeders</motion.h1>
+      <motion.div className={menu.hero}>
+        <motion.h1 className={menu.linear__w}>Feeders</motion.h1>
         <motion.p
           className="
           text-center
@@ -30,7 +36,126 @@ function Feeders() {
           Frozen and Live Feeders
         </motion.p>
       </motion.div>
-      <FeederMenu />
+      <div className={menu.container}>
+        <div className={menu.window}>
+          <nav className={menu.navMenu}>
+            <ul className={menu.ul}>
+              {["Rats", "Mice", "Live", "Other"].map((item) => (
+                <li
+                  key={item}
+                  className={`${menu.li} ${
+                    item === selectedTab ? `${menu.selected}` : ""
+                  }`}
+                  onClick={() => setSelectedTab(item)}
+                >
+                  {`${item}`}
+                  {item === selectedTab ? (
+                    <motion.div
+                      className={menu.underline}
+                      layoutId="underline"
+                    />
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <main>
+            <AnimatePresence exitBeforeEnter initial={false}>
+              {selectedTab === "Rats" && (
+                <motion.div
+                  key={selectedTab ? "Rats" : "empty"}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 100, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {rats.length > 0 && (
+                    <div className={menu.grid}>
+                      {rats.map((rat) => (
+                        <ul className={menu.ulGrid} key={rat._id}>
+                          <p className="text-blue-500 font-bold">{rat.name}</p>
+                          {rat.prices.map((price) => (
+                            <li key={price}>{price}</li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              )}
+
+              {selectedTab === "Mice" && (
+                <motion.div
+                  key={selectedTab ? "Mice" : "empty"}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 100, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {mice.length > 0 && (
+                    <div className={menu.grid}>
+                      {mice.map((mice) => (
+                        <ul className={menu.ulGrid} key={mice._id}>
+                          <p className="text-blue-500 font-bold">{mice.name}</p>
+                          {mice.prices.map((price) => (
+                            <li key={price}>{price}</li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              )}
+              {selectedTab === "Live" && (
+                <motion.div
+                  key={selectedTab ? "Live" : "empty"}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 100, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {live.length > 0 && (
+                    <div className={menu.grid}>
+                      {live.map((live) => (
+                        <ul className={menu.ulGrid} key={live._id}>
+                          <p className="text-blue-500 font-bold">{live.name}</p>
+                          {live.prices.map((price) => (
+                            <li key={price}>{price}</li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              )}
+              {selectedTab === "Other" && (
+                <motion.div
+                  key={selectedTab ? "Other" : "empty"}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 100, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {other.length > 0 && (
+                    <div className={menu.grid}>
+                      {other.map((other) => (
+                        <ul className={menu.ulGrid} key={other._id}>
+                          <p className="text-blue-500 font-bold">
+                            {other.name}
+                          </p>
+                          {other.prices.map((price) => (
+                            <li key={price}>{price}</li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </main>
+        </div>
+      </div>
       <div className="md:hidden flex justify-center pt-8">
         <motion.a
           className="
@@ -103,6 +228,26 @@ function Feeders() {
       </motion.p>
     </motion.div>
   );
+}
+
+const client = createClient({
+  ...config,
+});
+
+export async function getStaticProps() {
+  const rats = await client.fetch(`*[_type == "rat"] | order(order asc)`);
+  const mice = await client.fetch(`*[_type == "mice"] | order(order asc)`);
+  const live = await client.fetch(`*[_type == "live"] | order(order asc)`);
+  const other = await client.fetch(`*[_type == "other"] | order(order asc)`);
+
+  return {
+    props: {
+      rats,
+      mice,
+      live,
+      other,
+    },
+  };
 }
 
 export default Feeders;
