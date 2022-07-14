@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import imageUrlBuilder from "@sanity/image-url";
-import { client, urlFor } from "../lib/sanity";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Image from "next/image";

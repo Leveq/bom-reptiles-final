@@ -1,19 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import client from "../lib/sanity";
 
+import ReactLoading from "react-loading";
 import menu from "../styles/Feeders.module.css";
 
 const tabs = ["Rats", "Mice", "Live", "Other"];
 
 const FeederMenu = () => {
+  const [isLoading, setLoading] = useState(true);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [mappedMice, setMice] = useState([]);
   const [mappedRat, setRat] = useState([]);
   const [mappedLive, setLive] = useState([]);
   const [mappedOther, setOther] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const query = '*[_type == "mice"] | order(order asc)';
 
     client.fetch(query).then((data) => {
@@ -21,7 +23,7 @@ const FeederMenu = () => {
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const query = '*[_type == "live"] | order(order asc)';
 
     client.fetch(query).then((data) => {
@@ -29,15 +31,16 @@ const FeederMenu = () => {
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const query = '*[_type == "rat"] | order(order asc)';
 
     client.fetch(query).then((data) => {
       setRat(data);
+      setLoading(false);
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const query = '*[_type == "other"] | order(order asc)';
 
     client.fetch(query).then((data) => {
@@ -70,12 +73,13 @@ const FeederMenu = () => {
           <AnimatePresence exitBeforeEnter>
             {selectedTab === "Rats" && (
               <motion.div
+                isLoading={isLoading}
                 key={selectedTab ? "Rats" : "empty"}
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 100, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className={menu.grid}
+                className={isLoading ? `${menu.hidden}` : `${menu.grid}`}
               >
                 {mappedRat.map((rats, index) => (
                   <motion.ul key={index} className={menu.ulGrid}>

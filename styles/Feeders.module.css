@@ -157,24 +157,9 @@
   background: #fff;
 }
 
-.add-item {
-  width: 30px;
-  height: 30px;
-  background: #eee;
-  border-radius: 50%;
-  border: 0;
-  cursor: pointer;
-  align-self: center;
-}
-
-.add-item:disabled {
-  opacity: 0.4;
-  cursor: default;
-  pointer-events: none;
-}
-
 .grid {
   display: grid;
+  min-height: fit-content;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
   justify-content: center;
@@ -182,6 +167,10 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+}
+
+.hidden {
+  display: none;
 }
 
 .ulGrid {
