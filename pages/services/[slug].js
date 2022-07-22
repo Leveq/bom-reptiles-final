@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { urlFor } from "../../lib/sanity";
 import {
   BsFillTelephoneOutboundFill,
   BsFillChatLeftTextFill,
+  BsArrowLeft,
 } from "react-icons/bs";
 import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 
 export const Service = ({ title, desc, image, whatToExpect }) => {
-  console.log(title, desc, image, whatToExpect);
+  const router = useRouter();
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export const Service = ({ title, desc, image, whatToExpect }) => {
           </p>
         </div>
       </div>
-      <div className="md:hidden flex justify-center pt-8">
+      <div className="md:hidden flex justify-center pt-8 items-center">
         <a
           className="
           inline-flex
@@ -57,7 +59,7 @@ export const Service = ({ title, desc, image, whatToExpect }) => {
           px-10
           py-2.5
           mr-2
-          mb-2
+          
           text-center"
           whileTap={{ scale: 0.9 }}
           href="tel:9792151378"
@@ -75,13 +77,34 @@ export const Service = ({ title, desc, image, whatToExpect }) => {
           px-10
           py-2.5
           ml-2
-          mb-2
+          
           text-center"
           whileTap={{ scale: 0.9 }}
           href="sms:9792151378"
         >
           <span className="pr-1">Text</span> <BsFillChatLeftTextFill />
         </a>
+      </div>
+      <div className="text-center mt-6">
+        <button
+          className="
+            inline-flex
+            items-center
+            justify-between
+            text-center
+            rounded-full
+            bg-red-700
+            text-white
+            text-sm
+            px-5
+            py-2.5
+            drop-shadow-lg
+            font-medium"
+          type="button"
+          onClick={() => router.back()}
+        >
+          <BsArrowLeft className="pr-1" /> Back
+        </button>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import {
-  BsFillTelephoneOutboundFill,
-  BsFillChatLeftTextFill,
-} from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 
 export const Post = ({ title, body, image }) => {
+  const router = useRouter();
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -32,43 +31,25 @@ export const Post = ({ title, body, image }) => {
             blocks={body}
           />
         </div>
-        <div className="md:hidden flex justify-center pt-8">
-          <a
+        <div className="flex justify-center pt-12">
+          <button
             className="
-          inline-flex
-          items-center
-          rounded-full
-          text-white
-          bg-pink-600
-          drop-shadow-lg
-          px-10
-          py-2.5
-          mr-2
-          mb-2
-          text-center"
-            whileTap={{ scale: 0.9 }}
-            href="tel:9792151378"
+            inline-flex
+            items-center
+            justify-between
+            rounded-full
+            bg-red-700
+            text-white
+            text-sm
+            px-5
+            py-2.5
+            drop-shadow-lg
+            font-medium"
+            type="button"
+            onClick={() => router.back()}
           >
-            <span className="pr-1">Call</span> <BsFillTelephoneOutboundFill />
-          </a>
-          <a
-            className="
-          inline-flex
-          items-center
-          rounded-full
-          text-white
-          bg-pink-600
-          drop-shadow-lg
-          px-10
-          py-2.5
-          ml-2
-          mb-2
-          text-center"
-            whileTap={{ scale: 0.9 }}
-            href="sms:9792151378"
-          >
-            <span className="pr-1">Text</span> <BsFillChatLeftTextFill />
-          </a>
+            <BsArrowLeft className="pr-1" /> Back
+          </button>
         </div>
       </div>
     </>
